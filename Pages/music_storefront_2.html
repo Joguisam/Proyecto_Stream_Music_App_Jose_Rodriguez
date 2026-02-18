@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Successful - MusicStream</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+    <link rel="stylesheet" href="/CSS/layout.css">
+    <link rel="stylesheet" href="/CSS/components.css">
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="/images/favicon/site.webmanifest" />
+</head>
+<body class="app">
+
+    <header class="header">
+        <div class="header__logo-container">
+            <span class="header__brand-name">Kaleidoscope Music</span>
+        </div>
+    </header>
+
+    <div class="app__container">
+        <aside class="sidebar">
+            <h3 class="sidebar__title">MY MUSIC</h3>
+            <ul class="sidebar__menu menu">
+                <li class="menu__item">
+                    <a href="#" class="menu__link menu__link--active">
+                        <span class="menu__icon">🕒</span> Recently Purchased
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a href="/index.html" class="menu__link">
+                        <span class="menu__icon">💿</span> My Albums
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a href="/Pages/primary_music_player.html" class="menu__link">
+                        <span class="menu__icon">❤️</span> Liked Songs
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="content content--center">
+            
+            <section class="status-card">
+                <div class="status-card__icon-wrapper">
+                    <div class="status-card__check-circle">✓</div>
+                </div>
+                
+                <h1 class="status-card__title">Purchase Successful!</h1>
+                <p class="status-card__message">
+                    Thank you for your purchase. A confirmation email has been sent to your registered address. 
+                    You can now find your new music in your library.
+                </p>
+
+                <div class="order-receipt">
+                    <h2 class="order-receipt__title">Order Summary</h2>
+                    <div class="order-receipt__item">
+                        <img src="../Assets/Images/palm-tree-with-clouds.jpg" alt="Solar Flare" class="order-receipt__img">
+                        <div class="order-receipt__details">
+                            <span class="order-receipt__name">Solar Flare</span>
+                            <span class="order-receipt__artist">The Wanderers</span>
+                        </div>
+                        <span class="order-receipt__price">$14.99</span>
+                    </div>
+                    
+                    <div class="order-receipt__footer">
+                        <div class="order-receipt__row">
+                            <span>Total:</span>
+                            <span class="order-receipt__total-value">$14.99</span>
+                        </div>
+                        <div class="order-receipt__row">
+                            <span>Order ID:</span>
+                            <span class="order-receipt__id">#ABC-123-XYZ-456</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="status-card__actions">
+                    <a href="/Pages/album-song_detail_page.html">
+                        <button class="btn btn--secondary">View Order History</button>
+                    </a>
+                    <a href="../index.html" class="btn btn--primary">Return to Store</a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>

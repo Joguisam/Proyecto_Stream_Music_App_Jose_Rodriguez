@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - MusicStream</title>
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/layout.css">
+    <link rel="stylesheet" href="../CSS/components.css">
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="/images/favicon/site.webmanifest" />
+</head>
+<body class="app">
+
+    <header class="header">
+        <div class="header__content"> <div class="header__logo-container">
+                <span class="header__brand-name">Kaleidoscope Music</span>
+            </div>
+            <nav class="header__nav nav">
+                <a href="../index.html" class="nav__link">Home</a>
+                <a href="../index.html" class="nav__link">Discover</a>
+                <a href="../Pages/album-song_detail_page.html" class="nav__link">Library</a>
+            </nav>
+        </div> 
+    </header>
+
+    <main class="content">
+        <h1 class="content__title">Your Cart</h1>
+
+        <div class="cart-layout">
+            <section class="cart-layout__items">
+                
+                <article class="cart-item">
+                    <div class="cart-item__product">
+                        <img src="../Assets/Images/melbourne-australia-february-23-2024.jpg" alt="Currents" class="cart-item__img">
+                        <div class="cart-item__details">
+                            <h3 class="cart-item__name">Currents</h3>
+                            <p class="cart-item__artist">Tame Impala</p>
+                            <span class="cart-item__format">FLAC</span>
+                        </div>
+                    </div>
+                    <div class="cart-item__controls">
+                        <div class="quantity-selector">
+                            <button class="quantity-selector__btn">-</button>
+                            <span class="quantity-selector__value">1</span>
+                            <button class="quantity-selector__btn">+</button>
+                        </div>
+                        <span class="cart-item__price">$12.99</span>
+                        <button class="cart-item__remove-btn" title="Remove item">🗑️</button>
+                    </div>
+                </article>
+
+                <article class="cart-item">
+                    <div class="cart-item__product">
+                        <img src="../Assets/Images/zen-stones-sand-background-health-wellness-concept.jpg" alt="Blonde" class="cart-item__img">
+                        <div class="cart-item__details">
+                            <h3 class="cart-item__name">Blonde</h3>
+                            <p class="cart-item__artist">Frank Ocean</p>
+                            <span class="cart-item__format">Digital MP3</span>
+                        </div>
+                    </div>
+                    <div class="cart-item__controls">
+                        <div class="quantity-selector">
+                            <button class="quantity-selector__btn">-</button>
+                            <span class="quantity-selector__value">1</span>
+                            <button class="quantity-selector__btn">+</button>
+                        </div>
+                        <span class="cart-item__price">$9.99</span>
+                        <button class="cart-item__remove-btn" title="Remove item">🗑️</button>
+                    </div>
+                </article>
+
+            </section>
+
+            <aside class="cart-layout__summary order-summary">
+                <h2 class="order-summary__title">Order Summary</h2>
+                
+                <div class="order-summary__row">
+                    <span>Subtotal</span>
+                    <span>$22.98</span>
+                </div>
+                <div class="order-summary__row">
+                    <span>Estimated Tax</span>
+                    <span>$1.84</span>
+                </div>
+                
+                <hr class="order-summary__divider">
+                
+                <div class="order-summary__row order-summary__row--total">
+                    <span>Total</span>
+                    <span>$24.82</span>
+                </div>
+
+                <a href="../Pages/checkout_page.html" class="btn btn--primary btn--full order-summary__checkout-btn">
+                    <span class="icon">🔒</span> Proceed to Checkout
+                </a>
+                
+                <a href="../index.html" class="order-summary__continue">Continue Shopping</a>
+            </aside>
+        </div>
+    </main>
+
+</body>
+</html>
