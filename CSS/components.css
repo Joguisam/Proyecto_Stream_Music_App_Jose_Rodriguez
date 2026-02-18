@@ -1,0 +1,1044 @@
+/* --- BUSCADOR --- */
+.header__search-input {
+    background: #1e293b;
+    border: 1px solid var(--border-glass);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: 300px;
+    outline: none;
+}
+
+/* --- HERO SECTION: ORIGINAL --- */
+.hero {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 400px;
+    margin: 2rem auto;
+    padding: 4rem;
+    background-image: linear-gradient(to right, rgba(15, 23, 42, 0.8), transparent), 
+                      url('https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=2070');
+    background-size: cover;
+    background-position: center;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.hero__button.btn--primary {
+    background: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* --- SECCIÓN DEL CARRUSEL (SOLUCIÓN AL SCROLL) --- */
+.section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 5rem auto;
+    padding: 0 2rem;
+    overflow: hidden; /* Corta el desborde fuera de la sección pero permite scroll interno */
+}
+
+.card-grid {
+    display: flex;
+    gap: 30px;           
+    overflow-x: auto;    /* ACTIVA EL SCROLL HORIZONTAL */
+    overflow-y: hidden;
+    padding: 20px 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Suavidad en móviles */
+}
+
+/* Barra de scroll visible para que puedas confirmar que funciona */
+.card-grid::-webkit-scrollbar {
+    height: 8px;
+    display: block;      /* La hacemos visible para pruebas */
+}
+
+.card-grid::-webkit-scrollbar-thumb {
+    background: var(--accent-blue);
+    border-radius: 10px;
+}
+
+/* --- TARJETAS: TAMAÑO FIJO REAL --- */
+.card {
+    flex: 0 0 300px;     /* NO se encoge (0), NO crece (0), ANCHO FIJO (300px) */
+    width: 300px;        /* Refuerzo del ancho */
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 24px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- IMÁGENES: SOLUCIÓN AL CORTE --- */
+.card__image-wrapper {
+    width: 100%;         /* Usa el 100% de los 300px de la tarjeta */
+    height: 250px;       /* Altura fija para todas */
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;      /* Evita que el contenedor de la imagen se aplaste */
+}
+
+.card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* Llena el espacio sin deformar ni verse cortada raro */
+    display: block;
+}
+
+/* --- TEXTOS Y BOTONES --- */
+.card__info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;           /* Espacio entre título y subtítulo */
+}
+
+.card__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.card__subtitle {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.card__price-btn {
+    margin-top: auto;    /* Botón siempre al fondo */
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-glass);
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card__price-btn:hover {
+    background: var(--accent-blue);
+}
+
+/* --- CART ITEMS (Productos en el carrito) --- */
+.cart-item {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.cart-item:hover {
+    border-color: rgba(59, 130, 246, 0.5);
+}
+
+.cart-item__product {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.cart-item__img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.cart-item__details > .cart-item__name {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.cart-item__details > .cart-item__artist {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.cart-item__details > .cart-item__format {
+    display: inline-block;
+    font-size: 0.7rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+/* --- CONTROLES DE CANTIDAD --- */
+.cart-item__controls {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    padding: 5px;
+    border: 1px solid var(--border-glass);
+}
+
+.quantity-selector__btn {
+    background: transparent;
+    border: none;
+    color: white;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.quantity-selector__btn:hover {
+    color: var(--accent-blue);
+}
+
+.quantity-selector__value {
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cart-item__price {
+    font-weight: 800;
+    font-size: 1.1rem;
+    min-width: 80px;
+    text-align: right;
+}
+
+.cart-item__remove-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.cart-item__remove-btn:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* --- ORDER SUMMARY (Resumen de compra) --- */
+.order-summary {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 2rem;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.order-summary__title {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.order-summary__row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+.order-summary__row--total {
+    color: var(--text-main);
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-top: 1rem;
+}
+
+.order-summary__divider {
+    border: none;
+    border-top: 1px solid var(--border-glass);
+    margin: 1.5rem 0;
+}
+
+.order-summary__checkout-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+
+.order-summary__continue {
+    display: block;
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.order-summary__continue:hover {
+    color: var(--text-main);
+    text-decoration: underline;
+}
+/* --- SECCIÓN IZQUIERDA (PORTADA Y COMPRA) --- */
+.product__cover {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 32px;
+    object-fit: cover;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2.5rem;
+}
+
+.product__info-main {
+    margin-bottom: 2.5rem;
+}
+
+.product__title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.product__meta {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.product__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre el botón de compra y los secundarios */
+}
+
+.product__secondary-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn--outline {
+    flex: 1;
+    background: transparent;
+    border: 1px solid var(--border-glass);
+    color: white;
+    padding: 15px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn--outline:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* --- TRACKLIST (TABLA DE CANCIONES) --- */
+.tracklist {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4rem;
+}
+
+.tracklist th {
+    text-align: left;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.tracklist__row {
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.tracklist__row td {
+    padding: 20px; /* Celdas muy altas y cómodas */
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.tracklist__row:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tracklist__row--active {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent-blue);
+}
+
+.tracklist__title {
+    font-weight: 600;
+}
+
+/* --- TABS (INFORMACIÓN EXTRA) --- */
+.tabs {
+    display: flex;
+    gap: 40px;
+    border-bottom: 1px solid var(--border-glass);
+    margin-bottom: 2.5rem;
+}
+
+.tabs__item {
+    text-decoration: none;
+    color: var(--text-muted);
+    padding: 15px 0;
+    font-weight: 600;
+    position: relative;
+    transition: 0.3s;
+}
+
+.tabs__item--active {
+    color: white;
+}
+
+.tabs__item--active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--accent-blue);
+}
+
+.tabs__content {
+    line-height: 1.8;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.link-more {
+    color: var(--accent-blue);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* --- MINI PLAYER (FOOTER FIJO) --- */
+.mini-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-glass);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 10000;
+}
+
+.mini-player__track {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 300px;
+}
+
+.mini-player__img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+}
+
+.mini-player__name {
+    display: block;
+    font-weight: 700;
+}
+
+.mini-player__artist {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Controles de reproducción */
+.mini-player__controls {
+    flex: 1;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.mini-player__buttons {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.control-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.control-btn--play {
+    background: white;
+    color: black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.mini-player__progress-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.progress-bar__fill {
+    width: 40%;
+    height: 100%;
+    background: var(--accent-blue);
+}
+
+/* --- FORMULARIOS DE PAGO --- */
+.form-group {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-group__label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-left: 5px;
+}
+
+.form-group__input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-glass);
+    color: white;
+    padding: 18px 25px; /* Inputs muy altos y cómodos */
+    border-radius: 16px;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    outline: none;
+}
+
+.form-group__input:focus {
+    border-color: var(--accent-blue);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+}
+
+.form-group__input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form-group__input-wrapper .form-group__input {
+    width: 100%;
+}
+
+.form-group__icon {
+    position: absolute;
+    right: 20px;
+    font-size: 1.2rem;
+    opacity: 0.5;
+}
+
+/* --- TARJETA VISUAL (Card Form) --- */
+.card-form {
+    background: var(--bg-glass);
+    padding: 3rem;
+    border-radius: 30px;
+    border: 1px solid var(--border-glass);
+}
+
+.card-form__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.icon-sm {
+    height: 30px;
+    margin-left: 10px;
+    filter: grayscale(1) brightness(2);
+}
+
+/* --- RESUMEN EN CHECKOUT (Mini-items) --- */
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 2rem;
+}
+
+.summary-item__img {
+    width: 65px;
+    height: 65px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.summary-item__info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+}
+
+.summary-item__name {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.summary-item__artist {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.summary-item__price {
+    font-weight: 700;
+    color: var(--accent-blue);
+}
+
+/* Footer Legal */
+.order-summary__legal {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.5;
+}
+
+.order-summary__legal a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Estilo para el botón de regreso en el Header */
+.header__link-back {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.header__link-back:hover {
+    color: white;
+}
+
+/* --- DISPLAY DEL TRACK (CENTRAL) --- */
+.track-display__art-container {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 4rem; /* Mucho espacio bajo la portada */
+}
+
+.track-display__cover {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 40px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.track-display__cover:hover {
+    transform: scale(1.02);
+}
+
+.track-display__info {
+    text-align: center;
+}
+
+.track-display__title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -1.5px;
+}
+
+.track-display__artist {
+    font-size: 1.5rem;
+    color: var(--accent-blue);
+    margin-bottom: 5px;
+}
+
+.track-display__album {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    opacity: 0.7;
+}
+
+/* --- COLA DE REPRODUCCIÓN (SIDEBAR) --- */
+.queue__title {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.queue__item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    border-radius: 16px;
+    transition: 0.3s;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.queue__item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.queue__item--active {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.queue__img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.queue__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.queue__name {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.queue__meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* --- PLAYER BAR (FOOTER) --- */
+.player-bar {
+    height: 120px; /* Más alto para que respire */
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-glass);
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    align-items: center;
+    padding: 0 40px;
+}
+
+/* Controles de reproducción */
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.controls__buttons {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Espacio entre iconos de control */
+}
+
+.controls__btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.controls__btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.controls__btn--play {
+    background: white;
+    color: black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: 1;
+    font-size: 1.1rem;
+}
+
+/* Barra de Progreso */
+.controls__progress {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.controls__bar-bg {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+}
+
+.controls__bar-fill {
+    height: 100%;
+    background: var(--accent-blue);
+    border-radius: 3px;
+    position: relative;
+}
+
+/* Tirador de la barra (bolita) */
+.controls__bar-fill::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: -4px;
+    width: 14px;
+    height: 14px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* Volumen y Ajustes */
+.settings {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.settings__volume-bar {
+    width: 100px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.settings__volume-fill {
+    height: 100%;
+    background: white;
+    border-radius: 2px;
+}
+
+/* --- TARJETA DE ESTADO (SUCCESS CARD) --- */
+.status-card {
+    max-width: 600px;
+    width: 100%;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 40px;
+    padding: 5rem; /* Espaciado masivo interno */
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.status-card__icon-wrapper {
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.status-card__check-circle {
+    width: 80px;
+    height: 80px;
+    background: var(--accent-blue);
+    color: white;
+    font-size: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+}
+
+.status-card__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.status-card__message {
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 3.5rem;
+}
+
+/* --- RECIBO DE ORDEN (ORDER RECEIPT) --- */
+.order-receipt {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 24px;
+    padding: 2.5rem;
+    margin-bottom: 3.5rem;
+    text-align: left;
+}
+
+.order-receipt__title {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.order-receipt__item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-glass);
+    margin-bottom: 1.5rem;
+}
+
+.order-receipt__img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.order-receipt__details {
+    flex: 1;
+}
+
+.order-receipt__name {
+    display: block;
+    font-weight: 700;
+}
+
+.order-receipt__artist {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.order-receipt__price {
+    font-weight: 700;
+    color: var(--accent-blue);
+}
+
+.order-receipt__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.order-receipt__row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.order-receipt__total-value {
+    color: white;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+/* Acciones Finales */
+.status-card__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn--secondary {
+    background: transparent;
+    border: 1px solid var(--border-glass);
+    color: white;
+    padding: 18px;
+    border-radius: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn--secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+/* --- BUTTONS --- */
+
+/* Estilo base del botón */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-decoration: none;
+    gap: 0.5rem;
+}
+
+/* Variante Primaria (Azul) */
+.btn--primary {
+    background: linear-gradient(135deg, var(--accent-blue), #2563eb);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.btn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+    filter: brightness(1.1);
+}
+
+.btn--primary:active {
+    transform: translateY(0);
+}
+
+/* Modificador para que el botón ocupe todo el ancho disponible */
+.btn--full {
+    display: flex;
+    width: 100%;
+}
+
+/* Estilo para el icono dentro del botón (si lo llegas a usar) */
+.btn .icon {
+    font-size: 1.1rem;
+}
