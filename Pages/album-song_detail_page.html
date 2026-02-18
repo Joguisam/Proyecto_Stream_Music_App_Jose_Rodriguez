@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Echoes - MusicStream</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+    <link rel="stylesheet" href="/CSS/layout.css">
+    <link rel="stylesheet" href="/CSS/components.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="/images/favicon/site.webmanifest" />
+</head>
+<body class="app">
+
+    <header class="header">
+    <div class="header__content"> <div class="header__logo-container">
+            <span class="header__brand-name">Kaleidoscope Music</span>
+        </div>
+        <nav class="header__nav nav">
+            <a href="../index.html" class="nav__link">Home</a>
+            <a href="../index.html" class="nav__link">Discover</a>
+            <a href="../Pages/album-song_detail_page.html" class="nav__link">Library</a>
+        </nav>
+    </div>
+</header>
+
+    <main class="content content--detail">
+        <nav class="breadcrumbs">
+            <a href="index.html">Home</a> / <a href="#">Artist</a> / <span>Cosmic Echoes</span>
+        </nav>
+
+        <section class="product">
+            <div class="product__aside">
+                <img src="../Assets/Images/beautiful-photo-sea-waves-sunset.jpg" alt="Cosmic Echoes" class="product__cover">
+                <div class="product__info-main">
+                    <h1 class="product__title">Cosmic Echoes</h1>
+                    <p class="product__meta">Orion's Belt • 2023 • Electronic</p>
+                </div>
+                <div class="product__actions">
+                    <button class="btn btn--primary btn--full">Add Album to Cart - $9.99</button>
+                    <div class="product__secondary-actions">
+                        <button class="btn btn--outline"><span class="icon"><i class='bx bx-heart' ></i></span> Wishlist</button>
+                        <button class="btn btn--outline"><span class="icon"><i class='bx bx-share' ></i></span> Share</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product__main">
+                <h2 class="product__section-title">Tracklist</h2>
+                <table class="tracklist">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>TITLE</th>
+                            <th>ARTIST</th>
+                            <th><span class="icon"><i class='bx bx-time' ></i></span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="tracklist__row">
+                            <td>1</td>
+                            <td class="tracklist__title">Starlight Serenade</td>
+                            <td>Orion's Belt</td>
+                            <td>3:45</td>
+                        </tr>
+                        <tr class="tracklist__row tracklist__row--active">
+                            <td>2</td>
+                            <td class="tracklist__title">Nebula Dreams</td>
+                            <td>Orion's Belt</td>
+                            <td>4:12</td>
+                        </tr>
+                        <tr class="tracklist__row">
+                            <td>3</td>
+                            <td class="tracklist__title">Solar Flare</td>
+                            <td>Orion's Belt, ft. Celeste</td>
+                            <td>3:58</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <nav class="tabs">
+                    <a href="#" class="tabs__item tabs__item--active">About the Artist</a>
+                    <a href="#" class="tabs__item">Reviews</a>
+                    <a href="#" class="tabs__item">Credits</a>
+                </nav>
+                <div class="tabs__content">
+                    <p>Orion's Belt is an electronic music duo known for their atmospheric soundscapes and intricate melodies. Formed in 2018, they quickly gained a following...</p>
+                    <a href="/index.html" class="link-more">Return to the main page →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mini-player">
+        <div class="mini-player__track">
+            <img src="../Assets/Images/5532919.jpg" alt="Current" class="mini-player__img">
+            <div class="mini-player__info">
+                <span class="mini-player__name">Starlight Serenade</span>
+                <span class="mini-player__artist">Orion's Belt</span>
+            </div>
+        </div>
+        <div class="mini-player__controls">
+            <div class="mini-player__buttons">
+                <button type="button" class="control-btn">
+                    <i class='bx bx-shuffle' ></i>
+                </button>
+                <button type="button" class="control-btn">
+                    <i class='bx bx-skip-previous' ></i>
+                </button>
+                <button type="button" class="control-btn control-btn--play">
+                    <i class='bx bx-pause'></i>
+                </button>
+                <button type="button" class="control-btn">
+                    <i class='bx bx-skip-next' ></i>
+                </button>
+                <button type="button" class="control-btn">
+                    <i class='bx bx-repeat' ></i>
+                </button>
+            </div>
+            <div class="mini-player__progress-container">
+                <span class="time">1:23</span>
+                <div class="progress-bar"><div class="progress-bar__fill"></div></div>
+                <span class="time">3:45</span>
+            </div>
+        </div>
+        <div class="mini-player__volume">
+            <span class="icon">
+                <i class='bx bx-volume-full' ></i>
+            </span>
+            <div class="volume-bar"></div>
+        </div>
+    </footer>
+
+</body>
+</html>
