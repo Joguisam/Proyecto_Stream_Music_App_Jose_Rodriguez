@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing: Echoes in the Void - MusicStream</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+    <link rel="stylesheet" href="/CSS/layout.css">
+    <link rel="stylesheet" href="/CSS/components.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="/images/favicon/site.webmanifest" />
+
+    
+</head>
+<body class="app app--immersive">
+
+    <header class="header">
+    <div class="header__content"> <div class="header__logo-container">
+            <span class="header__brand-name">Kaleidoscope Music</span>
+        </div>
+        <nav class="header__nav nav">
+            <a href="../index.html" class="nav__link">Home</a>
+            <a href="../index.html" class="nav__link">Discover</a>
+            <a href="../Pages/album-song_detail_page.html" class="nav__link">Library</a>
+        </nav>
+    </div>
+</header>
+
+    <main class="focus-player">
+        <section class="focus-player__main track-display">
+            <div class="track-display__art-container">
+                <img src="../Assets/Images/green-leafed-trees-day-time.jpg" alt="Echoes in the Void" class="track-display__cover">
+                </div>
+            
+            <div class="track-display__info">
+                <div class="track-display__title-wrapper">
+                    <h1 class="track-display__title">Echoes in the Void</h1>
+                </div>
+                <h2 class="track-display__artist">Starlight Symphony</h2>
+                <p class="track-display__album">Cosmic Waves</p>
+            </div>
+        </section>
+
+        <aside class="focus-player__sidebar queue">
+            <h3 class="queue__title">Up Next</h3>
+            <div class="queue__list">
+                
+                <article class="queue__item">
+                    <img src="/Assets/Images/some-rocks-sea.jpg" alt="Neon Dreams" class="queue__img">
+                    <div class="queue__info">
+                        <span class="queue__name">Neon Dreams</span>
+                        <span class="queue__meta">Synthwave Rider</span>
+                    </div>
+                    <span class="queue__duration">3:45</span>
+                </article>
+
+                <article class="queue__item">
+                    <img src="/Assets/Images/shallow-focus-person-wearing-raincoat-with-backpack-surrounded-by-trees-rain.jpg" alt="Lost in Translation" class="queue__img">
+                    <div class="queue__info">
+                        <span class="queue__name">Lost in Translation</span>
+                        <span class="queue__meta">The Vowels</span>
+                    </div>
+                    <span class="queue__duration">4:12</span>
+                </article>
+
+                <article class="queue__item queue__item--active">
+                    <img src="/Assets/Images/business-transportation-transport-night-skyscraper.jpg" alt="City Lights" class="queue__img">
+                    <div class="queue__info">
+                        <span class="queue__name">City Lights</span>
+                        <span class="queue__meta">Urban Explorer</span>
+                    </div>
+                    <span class="queue__duration">2:58</span>
+                </article>
+
+                <article class="queue__item">
+                    <img src="/Assets/Images/waves-ocean-clear-blue-sky.jpg" alt="Ocean Drive" class="queue__img">
+                    <div class="queue__info">
+                        <span class="queue__name">Ocean Drive</span>
+                        <span class="queue__meta">Summer Haze</span>
+                    </div>
+                    <span class="queue__duration">3:30</span>
+                </article>
+
+            </div>
+        </aside>
+    </main>
+
+    <footer class="player-bar">
+        <div class="player-bar__current">
+            <img src="assets/img/album-void.jpg" alt="" class="player-bar__img">
+            <div class="player-bar__details">
+                <span class="player-bar__song">Echoes in the Void</span>
+                <span class="player-bar__artist">Starlight Symphony</span>
+            </div>
+        </div>
+
+        <div class="player-bar__controls controls">
+            <div class="controls__buttons">
+                <button class="controls__btn">
+                    <i class='bx bx-shuffle'></i>
+                </button>
+                <button class="controls__btn">
+                    <i class='bx bx-skip-previous' ></i>
+                </button>
+                <button class="controls__btn controls__btn--play">
+                    <i class='bx bx-play' ></i>
+                </button>
+                <button class="controls__btn">
+                    <i class='bx bx-skip-next' ></i>
+                </button>
+                <button class="controls__btn">
+                    <box-icon name='repeat' ></box-icon>
+                </button>
+            </div>
+            <div class="controls__progress">
+                <span class="controls__time">1:21</span>
+                <div class="controls__bar-bg">
+                    <div class="controls__bar-fill"></div>
+                </div>
+                <span class="controls__time">3:56</span>
+            </div>
+        </div>
+
+        <div class="player-bar__settings settings">
+            <button class="settings__btn">
+                <i class='bx bx-volume-full' ></i>
+            </button>
+            <div class="settings__volume-bar">
+                <div class="settings__volume-fill"></div>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
