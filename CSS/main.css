@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark: #0f172a;
+    --bg-sidebar: #0b1120;
+    --bg-glass: rgba(30, 41, 59, 0.5);
+    --border-glass: rgba(255, 255, 255, 0.1);
+    --accent-blue: #3b82f6;
+    --accent-glow: #60a5fa;
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+}
+
+body.app {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+}
