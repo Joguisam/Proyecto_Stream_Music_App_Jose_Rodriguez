@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout - MusicStream</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+    <link rel="stylesheet" href="/CSS/layout.css">
+    <link rel="stylesheet" href="/CSS/components.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="/images/favicon/site.webmanifest" />
+</head>
+<body class="app">
+
+    <header class="header">
+        <div class="header__logo-container">
+            <a href="/index.html">
+                <span class="header__brand-name">Kaleidoscope Music</span>
+            </a>
+
+        </div>
+    </header>
+
+    <main class="content">
+        <nav class="breadcrumbs">
+            <span class="breadcrumbs__item">Cart</span> / 
+            <span class="breadcrumbs__item breadcrumbs__item--active">Payment</span> / 
+            <span class="breadcrumbs__item">Complete</span>
+        </nav>
+
+        <h1 class="content__title">Secure Checkout</h1>
+
+        <div class="checkout-layout">
+            <section class="checkout-layout__forms">
+                
+                <div class="checkout-section">
+                    <h2 class="checkout-section__title">Payment Method</h2>
+                    <div class="card-form">
+                        <div class="card-form__header">
+                            <span class="card-form__label">Pay with Credit Card</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-group__label">Card Number</label>
+                            <div class="form-group__input-wrapper">
+                                <input type="text" class="form-group__input" placeholder="0000 0000 0000 0000">
+                                <span class="form-group__icon">
+                                    <box-icon name='credit-card'></box-icon>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-group__label">Expiration (MM/YY)</label>
+                                <input type="text" class="form-group__input" placeholder="MM/YY">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-group__label">CVC</label>
+                                <div class="form-group__input-wrapper">
+                                    <input type="text" class="form-group__input" placeholder="123">
+                                    <span class="form-group__icon">
+                                        <box-icon name='lock-alt' ></box-icon>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-group__label">Name on Card</label>
+                            <input type="text" class="form-group__input" placeholder="John Doe">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-section">
+                    <h2 class="checkout-section__title">Billing Address</h2>
+                    <div class="address-form">
+                        <div class="form-group">
+                            <label class="form-group__label">Country/Region</label>
+                            <select class="form-group__input form-group__input--select">
+                                <option>United States</option>
+                                <option>Mexico</option>
+                                <option>Spain</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-group__label">Street Address</label>
+                            <input type="text" class="form-group__input" placeholder="123 Music Lane">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-group__label">City</label>
+                                <input type="text" class="form-group__input" placeholder="Nashville">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-group__label">State/Province</label>
+                                <input type="text" class="form-group__input" placeholder="Tennessee">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="checkout-layout__sidebar">
+                <div class="order-summary order-summary--checkout">
+                    <h2 class="order-summary__title">Order Summary</h2>
+                    
+                    <div class="order-summary__items">
+                        <div class="summary-item">
+                            <img src="../Assets/Images/gradient-3d-fluid-background.jpg" alt="Chromatic" class="summary-item__img">
+                            <div class="summary-item__info">
+                                <span class="summary-item__name">Chromatic Echoes</span>
+                                <span class="summary-item__artist">The Lumineers</span>
+                            </div>
+                            <span class="summary-item__price">$12.99</span>
+                        </div>
+                        <div class="summary-item">
+                            <img src="../Assets/Images/some-rocks-sea.jpg" alt="Neon" class="summary-item__img">
+                            <div class="summary-item__info">
+                                <span class="summary-item__name">Neon Dreams</span>
+                                <span class="summary-item__artist">Synthwave Col.</span>
+                            </div>
+                            <span class="summary-item__price">$9.99</span>
+                        </div>
+                    </div>
+
+                    <div class="order-summary__totals">
+                        <div class="order-summary__row">
+                            <span>Subtotal</span>
+                            <span>$22.98</span>
+                        </div>
+                        <div class="order-summary__row">
+                            <span>Taxes</span>
+                            <span>$1.84</span>
+                        </div>
+                        <div class="order-summary__row order-summary__row--total">
+                            <span>Total</span>
+                            <span>$24.82</span>
+                        </div>
+                    </div>
+
+                    <a href="../Pages/music_storefront_2.html" class="btn btn--primary btn--full">
+                        <span class="icon"><box-icon name='lock-alt' ></box-icon></span> Place Order & Pay $24.82
+                    </a>
+                    
+                    <p class="order-summary__legal">
+                        By placing this order, you agree to our <a href="#">Terms of Service</a>.
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+</body>
+</html>
